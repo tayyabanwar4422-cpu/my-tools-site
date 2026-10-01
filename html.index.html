@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ==================== PRIMARY SEO ==================== -->
+  <title>AllToolsHub – Free Online Tools: Video Downloader, Image Converter, Birth Chart, Paint Calculator & More</title>
+  <meta name="description" content="Free online tools for everyone. Download videos from YouTube, TikTok & WeChat. Convert images, calculate birth charts, estimate paint, generate titles & more. No signup required." />
+  <meta name="keywords" content="free online tools, video downloader, image converter, birth chart calculator, paint calculator, title generator, wechat video downloader, all tools hub, online utilities" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="AllToolsHub" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://alltoolshub.vercel.app/" />
+
+  <!-- ==================== OPEN GRAPH ==================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AllToolsHub" />
+  <meta property="og:title" content="AllToolsHub – Free Online Tools for Everyone" />
+  <meta property="og:description" content="Download videos, convert images, calculate birth charts, estimate paint, generate titles & more. 100% free, no signup." />
+  <meta property="og:url" content="https://alltoolshub.vercel.app/" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ==================== TWITTER ==================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AllToolsHub – Free Online Tools for Everyone" />
+  <meta name="twitter:description" content="Download videos, convert images, calculate birth charts & more. 100% free." />
+
+  <!-- ==================== FAVICON ==================== -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23020617'/%3E%3Cpath d='M50 20v45M50 65l-15-15M50 65l15-15M22 82h56' stroke='%2310b981' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+
+  <!-- ==================== TAILWIND CSS (CDN) ==================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ==================== STRUCTURED DATA: WEB SITE ==================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AllToolsHub",
+    "url": "https://alltoolshub.vercel.app/",
+    "description": "Free online tools: video downloader, image converter, birth chart calculator, paint calculator, title generator, and WeChat video downloader.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://alltoolshub.vercel.app/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    html { -webkit-tap-highlight-color: transparent; }
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+    .glow {
+      background: radial-gradient(60% 60% at 50% 0%, rgba(16, 185, 129, 0.18) 0%, rgba(2, 6, 23, 0) 70%);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up { animation: fadeUp 0.28s ease-out both; }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .shimmer {
+      background: linear-gradient(90deg, transparent 0%, rgba(16,185,129,0.08) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 1.8s infinite;
+    }
+
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+    ::selection { background: #10b981; color: #020617; }
+
+    /* Tool card hover */
+    .tool-card { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+    .tool-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(16, 185, 129, 0.4);
+      box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Nav dropdown */
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+    /* Ad slot styling */
+    .ad-slot {
+      background: repeating-linear-gradient(45deg, #0f172a, #0f172a 10px, #1e293b 10px, #1e293b 20px);
+      border: 1px dashed #334155;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Range slider */
+    input[type="range"] { accent-color: #10b981; }
+
+    /* Color swatch */
+    .color-swatch { transition: transform 0.15s ease; }
+    .color-swatch:hover { transform: scale(1.15); }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-300 antialiased min-h-screen flex flex-col">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="w-full border-b border-slate-800/70 backdrop-blur sticky top-0 z-50 bg-slate-950/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <a href="#/" class="flex items-center gap-2.5 group">
+        <span class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
+          <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12" /><path d="M7 11l5 5 5-5" /><path d="M5 20h14" />
+          </svg>
+        </span>
+        <span class="font-bold text-slate-100 tracking-tight text-[15px] sm:text-base">
+          AllTools<span class="text-emerald-500">Hub</span>
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+        <a href="#/" class="px-3.5 py-2 rounded-lg text-slate-400 hover:text-emerald-400 hover:bg-slate-900 transition-all" data-nav="home">Home</a>
+
+        <div class="nav-dropdown relative">
+          <button class="px-3.5 py-2 rounded-lg text-slate-400 hover:text-emerald-400 hover:bg-slate-900 transition-all flex items-center gap-1">
+            Tools
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu hidden absolute top-full left-0 mt-1 w-64 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl shadow-black/60 overflow-hidden py-1.5">
+            <a href="#/tools/video-downloader" class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-800 transition-colors">
+              <span class="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/25 flex items-center justify-center text-red-400 text-xs font-bold">▶</span>
+              <div><p class="text-sm text-slate-200 font-medium">Video Downloader</p><p class="text-[11px] text-slate-500">YouTube, TikTok & more</p></div>
+            </a>
+            <a href="#/tools/image-converter" class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-800 transition-colors">
+              <span class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/25 flex items-center justify-center text-purple-400 text-xs font-bold">🖼</span>
+              <div><p class="text-sm text-slate-200 font-medium">Image Converter</p><p class="text-[11px] text-slate-500">PNG, JPEG, WebP</p></div>
+            </a>
+            <a href="#/tools/birth-chart" class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-800 transition-colors">
+              <span class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 text-xs font-bold">✦</span>
+              <div><p class="text-sm text-slate-200 font-medium">Birth Chart</p><p class="text-[11px] text-slate-500">Sun, Moon & Rising</p></div>
+            </a>
+            <a href="#/tools/paint-calculator" class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-800 transition-colors">
+              <span class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400 text-xs font-bold">🎨</span>
+              <div><p class="text-sm text-slate-200 font-medium">Paint Calculator</p><p class="text-[11px] text-slate-500">Estimate paint needed</p></div>
+            </a>
+            <a href="#/tools/title-generator" class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-800 transition-colors">
+              <span class="w-8 h-8 rounded-lg bg-pink-500/10 border border-pink-500/25 flex items-center justify-center text-pink-400 text-xs font-bold">✎</span>
+              <div><p class="text-sm text-slate-200 font-medium">Title Generator</p><p class="text-[11px] text-slate-500">Catchy titles instantly</p></div>
+            </a>
+            <a href="#/tools/wechat-downloader" class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-800 transition-colors">
+              <span class="w-8 h-8 rounded-lg bg-green-500/10 border border-green-500/25 flex items-center justify-center text-green-400 text-xs font-bold">💬</span>
+              <div><p class="text-sm text-slate-200 font-medium">WeChat Downloader</p><p class="text-[11px] text-slate-500">Save WeChat videos</p></div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#/about" class="px-3.5 py-2 rounded-lg text-slate-400 hover:text-emerald-400 hover:bg-slate-900 transition-all" data-nav="about">About</a>
+      </nav>
+
+      <button id="mobile-menu-btn" class="md:hidden w-10 h-10 rounded-lg border border-slate-800 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-colors">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950 px-4 py-3 space-y-1">
+      <a href="#/" class="block px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:bg-slate-900 hover:text-emerald-400 transition-all">Home</a>
+      <a href="#/tools/video-downloader" class="block px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:bg-slate-900 hover:text-emerald-400 transition-all">Video Downloader</a>
+      <a href="#/tools/image-converter" class="block px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:bg-slate-900 hover:text-emerald-400 transition-all">Image Converter</a>
+      <a href="#/tools/birth-chart" class="block px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:bg-slate-900 hover:text-emerald-400 transition-all">Birth Chart</a>
+      <a href="#/tools/paint-calculator" class="block px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:bg-slate-900 hover:text-emerald-400 transition-all">Paint Calculator</a>
+      <a href="#/tools/title-generator" class="block px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:bg-slate-900 hover:text-emerald-400 transition-all">Title Generator</a>
+      <a href="#/tools/wechat-downloader" class="block px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:bg-slate-900 hover:text-emerald-400 transition-all">WeChat Downloader</a>
+      <a href="#/about" class="block px-3 py-2.5 rounded-lg text-sm text-slate-300 hover:bg-slate-900 hover:text-emerald-400 transition-all">About Us</a>
+    </div>
+  </header>
+
+  <!-- ==================== AD SLOT: TOP BANNER ==================== -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-4 w-full">
+    <!-- ADSTERRA_BANNER_728x90 -->
+    <div class="ad-slot h-[90px] w-full hidden sm:flex" id="ad-top-banner">
+      Adsterra Banner 728×90 — Paste your ad code here
+    </div>
+    <div class="ad-slot h-[50px] w-full sm:hidden" id="ad-top-mobile">
+      Adsterra Mobile Banner 320×50 — Paste your ad code here
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT (ROUTER) ==================== -->
+  <main id="app" class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-8 w-full"></main>
+
+  <!-- ==================== AD SLOT: BOTTOM BANNER ==================== -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pb-4 w-full">
+    <!-- ADSTERRA_BANNER_728x90_BOTTOM -->
+    <div class="ad-slot h-[90px] w-full hidden sm:flex" id="ad-bottom-banner">
+      Adsterra Banner 728×90 — Paste your ad code here
+    </div>
+    <div class="ad-slot h-[50px] w-full sm:hidden" id="ad-bottom-mobile">
+      Adsterra Mobile Banner 320×50 — Paste your ad code here
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-slate-800/70 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
+              <svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg>
+            </span>
+            <span class="font-bold text-slate-100 text-sm">AllTools<span class="text-emerald-500">Hub</span></span>
+          </div>
+          <p class="text-xs text-slate-500 leading-relaxed">Free online tools for creators, students, and professionals. No signup, no watermark, no hidden fees.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Tools</h4>
+          <ul class="space-y-2 text-xs text-slate-500">
+            <li><a href="#/tools/video-downloader" class="hover:text-emerald-400 transition-colors">Video Downloader</a></li>
+            <li><a href="#/tools/image-converter" class="hover:text-emerald-400 transition-colors">Image Converter</a></li>
+            <li><a href="#/tools/birth-chart" class="hover:text-emerald-400 transition-colors">Birth Chart Calculator</a></li>
+            <li><a href="#/tools/paint-calculator" class="hover:text-emerald-400 transition-colors">Paint Calculator</a></li>
+            <li><a href="#/tools/title-generator" class="hover:text-emerald-400 transition-colors">Title Generator</a></li>
+            <li><a href="#/tools/wechat-downloader" class="hover:text-emerald-400 transition-colors">WeChat Downloader</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Company</h4>
+          <ul class="space-y-2 text-xs text-slate-500">
+            <li><a href="#/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+            <li><a href="#/about" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+            <li><a href="#/about" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+            <li><a href="#/about" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-slate-500">&copy; <span id="year">2025</span> AllToolsHub. All rights reserved.</p>
+        <p class="text-xs text-slate-600">Built with plain HTML, Tailwind CSS &amp; vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== APPLICATION LOGIC ==================== -->
+  <script>
+  (function () {
+    "use strict";
+
+    /* =========================================================
+       CONFIGURATION
+    ========================================================= */
+    var CONFIG = {
+      siteName: "AllToolsHub",
+      siteUrl: "https://alltoolshub.vercel.app",
+      cobaltApi: "https://api.cobalt.tools/api/json",
+      tikwmApi: "https://www.tikwm.com/api/",
+      proxies: [
+        function (url) { return "https://api.allorigins.win/raw?url=" + encodeURIComponent(url); },
+        function (url) { return "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(url); },
+        function (url) { return "https://corsproxy.io/?" + encodeURIComponent(url); }
+      ],
+      fetchTimeout: 18000
+    };
+
+    /* =========================================================
+       UTILITIES
+    ========================================================= */
+    function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+    function $$(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
+    function el(tag, attrs, children) {
+      var node = document.createElement(tag);
+      if (attrs) {
+        Object.keys(attrs).forEach(function (k) {
+          if (k === "class") node.className = attrs[k];
+          else if (k === "html") node.innerHTML = attrs[k];
+          else if (k.indexOf("on") === 0) node.addEventListener(k.slice(2), attrs[k]);
+          else node.setAttribute(k, attrs[k]);
+        });
+      }
+      if (children) {
+        (Array.isArray(children) ? children : [children]).forEach(function (c) {
+          if (typeof c === "string") node.appendChild(document.createTextNode(c));
+          else if (c) node.appendChild(c);
+        });
+      }
+      return node;
+    }
+    function esc(str) {
+      return String(str).replace(/[&<>"']/g, function (m) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m];
+      });
+    }
+
+    function fetchWithTimeout(url, ms, options) {
+      var controller = new AbortController();
+      var timer = setTimeout(function () { controller.abort(); }, ms);
+      var opts = options || {};
+      opts.signal = controller.signal;
+      return fetch(url, opts).then(function (r) { clearTimeout(timer); return r; })
+        .catch(function (e) { clearTimeout(timer); throw e; });
+    }
+
+    function decodeEntities(str) {
+      return String(str)
+        .replace(/&amp;/g, "&").replace(/&#0*38;/g, "&").replace(/&#x0*26;/gi, "&")
+        .replace(/&quot;/g, '"').replace(/&#0*34;/g, '"')
+        .replace(/&#0*39;/g, "'").replace(/&#x0*27;/gi, "'")
+        .replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+        .replace(/&#x2F;/gi, "/").replace(/\\u002F/gi, "/")
+        .replace(/\\u0026/gi, "&").replace(/\\\//g, "/");
+    }
+
+    function normaliseInput(raw) {
+      var value = (raw || "").trim();
+      var match = value.match(/https?:\/\/[^\s]+/i);
+      if (match) value = match[0];
+      value = value.split("#")[0].replace(/\/+$/, "");
+      if (!/^https?:\/\//i.test(value)) value = "https://" + value.replace(/^\/+/, "");
+      return value;
+    }
+
+    function detectPlatform(url) {
+      var platforms = [
+        { id: "youtube", name: "YouTube", re: /(?:youtube\.com|youtu\.be|youtube-nocookie\.com)/i },
+        { id: "tiktok", name: "TikTok", re: /tiktok\.com/i },
+        { id: "instagram", name: "Instagram", re: /instagram\.com/i },
+        { id: "facebook", name: "Facebook", re: /(?:facebook\.com|fb\.watch|fb\.com)/i },
+        { id: "twitter", name: "Twitter / X", re: /(?:twitter\.com|x\.com)/i },
+        { id: "reddit", name: "Reddit", re: /reddit\.com/i },
+        { id: "wechat", name: "WeChat", re: /(?:weixin\.qq\.com|wechat\.com|mp\.weixin\.qq\.com)/i },
+        { id: "threads", name: "Threads", re: /threads\.(?:net|com)/i },
+        { id: "vimeo", name: "Vimeo", re: /vimeo\.com/i },
+        { id: "dailymotion", name: "Dailymotion", re: /dailymotion\.com/i },
+        { id: "twitch", name: "Twitch", re: /twitch\.tv/i }
+      ];
+      for (var i = 0; i < platforms.length; i++) {
+        if (platforms[i].re.test(url)) return platforms[i];
+      }
+      return { id: "generic", name: "Video" };
+    }
+
+    /* =========================================================
+       VIDEO EXTRACTION ENGINE
+    ========================================================= */
+    var VIDEO_PATTERNS = [
+      /<meta[^>]*property\s*=\s*["']og:video:secure_url["'][^>]*content\s*=\s*["']([^"']+)["']/i,
+      /<meta[^>]*content\s*=\s*["']([^"']+)["'][^>]*property\s*=\s*["']og:video:secure_url["']/i,
+      /<meta[^>]*property\s*=\s*["']og:video["'][^>]*content\s*=\s*["']([^"']+)["']/i,
+      /<meta[^>]*content\s*=\s*["']([^"']+)["'][^>]*property\s*=\s*["']og:video["']/i,
+      /<meta[^>]*name\s*=\s*["']twitter:player:stream["'][^>]*content\s*=\s*["']([^"']+)["']/i,
+      /"video_url"\s*:\s*"([^"]+)"/i,
+      /"contentUrl"\s*:\s*"([^"]+)"/i,
+      /(https?:\/\/[^"'\s\\]+?\.mp4[^"'\s\\]*)/i
+    ];
+
+    function extractVideoUrl(html) {
+      if (!html || typeof html !== "string") return null;
+      for (var i = 0; i < VIDEO_PATTERNS.length; i++) {
+        var m = html.match(VIDEO_PATTERNS[i]);
+        if (m && m[1]) {
+          var c = decodeEntities(m[1]).trim();
+          if (/^https?:\/\//i.test(c)) return c;
+        }
+      }
+      return null;
+    }
+
+    function fetchViaCobalt(videoUrl) {
+      var body = { url: videoUrl, vCodec: "h264", vQuality: "720", isAudioOnly: false };
+      return fetchWithTimeout(CONFIG.cobaltApi, CONFIG.fetchTimeout, {
+        method: "POST",
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.status === "error" || data.status === "rate-limit") throw new Error(data.text || "COBALT_ERROR");
+        if ((data.status === "redirect" || data.status === "stream" || data.status === "success") && data.url)
+          return { url: data.url, platform: "Video" };
+        if (data.status === "picker" && data.picker && data.picker.length > 0)
+          return { url: data.picker[0].url, platform: "Video" };
+        throw new Error("COBALT_NO_URL");
+      });
+    }
+
+    function fetchViaTikWM(videoUrl) {
+      var apiUrl = CONFIG.tikwmApi + "?url=" + encodeURIComponent(videoUrl);
+      return fetchWithTimeout(apiUrl, CONFIG.fetchTimeout, { method: "GET", headers: { "Accept": "application/json" } })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.code !== 0 || !data.data) throw new Error("TIKWM_ERROR");
+          var out = data.data.play || data.data.hdplay || data.data.wmplay;
+          if (!out) throw new Error("TIKWM_NO_URL");
+          return { url: out, platform: "TikTok" };
+        });
+    }
+
+    function fetchViaScraping(videoUrl) {
+      var index = 0;
+      function attempt() {
+        if (index >= CONFIG.proxies.length) return Promise.reject(new Error("ALL_PROXIES_FAILED"));
+        var proxyUrl = CONFIG.proxies[index](videoUrl);
+        index++;
+        return fetchWithTimeout(proxyUrl, CONFIG.fetchTimeout, { method: "GET", redirect: "follow" })
+          .then(function (r) { if (!r.ok) throw new Error("HTTP_" + r.status); return r.text(); })
+          .then(function (text) {
+            if (!text || text.length < 200) throw new Error("EMPTY_RESPONSE");
+            var src = extractVideoUrl(text);
+            if (!src) throw new Error("NO_VIDEO_FOUND");
+            return { url: src, platform: "Video" };
+          })
+          .catch(function () { return attempt(); });
+      }
+      return attempt();
+    }
+
+    function resolveVideo(videoUrl, platform) {
+      if (platform.id === "tiktok") {
+        return fetchViaTikWM(videoUrl).catch(function () { return fetchViaCobalt(videoUrl); }).catch(function () { return fetchViaScraping(videoUrl); });
+      }
+      return fetchViaCobalt(videoUrl).catch(function () { return fetchViaScraping(videoUrl); });
+    }
+
+    /* =========================================================
+       PAGE TEMPLATES
+    ========================================================= */
+
+    // ---------- HOME PAGE ----------
+    function renderHome() {
+      return el("div", { class: "animate-fade-up" }, [
+        // Hero
+        el("section", { class: "glow text-center pt-8 pb-12" }, [
+          el("span", { class: "inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 rounded-full px-3.5 py-1.5 mb-6" }, [
+            el("span", { class: "w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" }),
+            "6 Free Tools · No Signup · No Watermark"
+          ]),
+          el("h1", { class: "text-3xl sm:text-5xl font-extrabold text-slate-50 tracking-tight leading-tight mb-4" }, "Free Online Tools for Everyone"),
+          el("p", { class: "text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed" },
+            "Download videos, convert images, calculate birth charts, estimate paint, generate titles, and save WeChat videos — all in one place, completely free."),
+          el("div", { class: "flex flex-wrap justify-center gap-3" }, [
+            el("a", { href: "#/tools/video-downloader", class: "inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl px-6 py-3.5 transition-all shadow-lg shadow-emerald-500/20" }, [
+              el("svg", { class: "w-4 h-4", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.5", "stroke-linecap": "round", "stroke-linejoin": "round" }, [
+                el("path", { d: "M12 3v12" }), el("path", { d: "M7 11l5 5 5-5" }), el("path", { d: "M5 20h14" })
+              ]),
+              "Try Video Downloader"
+            ]),
+            el("a", { href: "#tools-grid", class: "inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm rounded-xl px-6 py-3.5 transition-colors" }, "Browse All Tools")
+          ])
+        ]),
+
+        // Tools grid
+        el("section", { id: "tools-grid", class: "pt-4" }, [
+          el("h2", { class: "text-2xl sm:text-3xl font-extrabold text-slate-50 tracking-tight mb-2 text-center" }, "All Tools"),
+          el("p", { class: "text-slate-400 text-sm text-center mb-8 max-w-lg mx-auto" }, "Pick a tool to get started. Everything runs in your browser — nothing is uploaded to our servers."),
+
+          el("div", { class: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" }, [
+
+            // Video Downloader card
+            toolCard(
+              "#/tools/video-downloader",
+              "▶",
+              "bg-red-500/10 border-red-500/25 text-red-400",
+              "Video Downloader",
+              "Download videos from YouTube, TikTok, Instagram, Facebook, Twitter/X, Reddit, and 1000+ sites.",
+              "YouTube, TikTok, Instagram + more"
+            ),
+
+            // Image Converter card
+            toolCard(
+              "#/tools/image-converter",
+              "🖼",
+              "bg-purple-500/10 border-purple-500/25 text-purple-400",
+              "Image Converter",
+              "Convert images between PNG, JPEG, and WebP formats instantly in your browser.",
+              "PNG · JPEG · WebP"
+            ),
+
+            // Birth Chart card
+            toolCard(
+              "#/tools/birth-chart",
+              "✦",
+              "bg-amber-500/10 border-amber-500/25 text-amber-400",
+              "Birth Chart Calculator",
+              "Discover your Sun sign, Moon sign, and Rising sign based on your birth date, time, and place.",
+              "Sun · Moon · Rising"
+            ),
+
+            // Paint Calculator card
+            toolCard(
+              "#/tools/paint-calculator",
+              "🎨",
+              "bg-cyan-500/10 border-cyan-500/25 text-cyan-400",
+              "Paint Calculator",
+              "Estimate how much paint you need for any room. Enter dimensions and get litres instantly.",
+              "Room dimensions → litres"
+            ),
+
+            // Title Generator card
+            toolCard(
+              "#/tools/title-generator",
+              "✎",
+              "bg-pink-500/10 border-pink-500/25 text-pink-400",
+              "Title Generator",
+              "Generate catchy, click-worthy titles for blogs, YouTube videos, and articles in seconds.",
+              "Blog · YouTube · Article"
+            ),
+
+            // WeChat Downloader card
+            toolCard(
+              "#/tools/wechat-downloader",
+              "💬",
+              "bg-green-500/10 border-green-500/25 text-green-400",
+              "WeChat Video Downloader",
+              "Save videos from WeChat public articles and moments to your device as MP4 files.",
+              "WeChat articles · Moments"
+            )
+
+          ])
+        ]),
+
+        // SEO content
+        seoSection("Why Use AllToolsHub?", [
+          el("p", { class: "text-slate-400 leading-relaxed mb-4" },
+            "AllToolsHub brings together six powerful tools that people use every day — video downloading, image conversion, astrology, DIY painting, content creation, and social media saving — into one clean, fast, and completely free website."),
+          el("p", { class: "text-slate-400 leading-relaxed mb-4" },
+            "Unlike other tool websites that bombard you with pop-ups, force you to sign up, or limit how many times you can use a tool, AllToolsHub is built differently. Every tool runs entirely in your browser using JavaScript. That means your files never leave your device, your privacy is protected, and the tools work instantly without waiting for a server."),
+          el("p", { class: "text-slate-400 leading-relaxed" },
+            "Whether you are a content creator saving reference videos, a student converting images for a project, someone curious about their birth chart, a homeowner planning a paint job, a blogger looking for the perfect title, or someone who wants to save a WeChat video — AllToolsHub has you covered.")
+        ])
+      ]);
+    }
+
+    function toolCard(href, icon, iconClass, title, desc, tag) {
+      return el("a", { href: href, class: "tool-card block bg-slate-900 border border-slate-800 rounded-2xl p-5" }, [
+        el("div", { class: "flex items-start justify-between mb-3" }, [
+          el("span", { class: "w-11 h-11 rounded-xl " + iconClass + " border flex items-center justify-center text-lg font-bold" }, icon),
+          el("svg", { class: "w-4 h-4 text-slate-600", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.5", "stroke-linecap": "round", "stroke-linejoin": "round" }, [
+            el("path", { d: "M5 12h14M12 5l7 7-7 7" })
+          ])
+        ]),
+        el("h3", { class: "text-base font-bold text-slate-100 mb-1.5" }, title),
+        el("p", { class: "text-xs text-slate-400 leading-relaxed mb-3" }, desc),
+        el("span", { class: "inline-block text-[10px] font-semibold uppercase tracking-wider text-slate-500 bg-slate-800/60 border border-slate-700/60 rounded-full px-2.5 py-1" }, tag)
+      ]);
+    }
+
+    function seoSection(title, paragraphs) {
+      return el("section", { class: "pt-14" }, [
+        el("h2", { class: "text-2xl sm:text-3xl font-extrabold text-slate-50 tracking-tight mb-4" }, title)
+      ].concat(paragraphs));
+    }
+
+    // ---------- VIDEO DOWNLOADER PAGE ----------
+    function renderVideoDownloader() {
+      var container = el("div", { class: "animate-fade-up" }, [
+        el("h1", { class: "text-3xl sm:text-4xl font-extrabold text-slate-50 tracking-tight mb-3" }, "All Video Downloader"),
+        el("p", { class: "text-slate-400 text-base mb-8 max-w-2xl leading-relaxed" },
+          "Paste any video link from YouTube, TikTok, Instagram, Facebook, Twitter/X, Reddit, or 1000+ other platforms. Download as MP4 — free, fast, and without watermarks."),
+
+        el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-2xl shadow-black/40 mb-10" }, [
+          el("form", { id: "vd-form", autocomplete: "off" }, [
+            el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2.5" }, "Video URL (any platform)"),
+            el("div", { class: "flex flex-col sm:flex-row gap-3" }, [
+              el("div", { class: "relative flex-1" }, [
+                el("input", { id: "vd-input", type: "url", placeholder: "https://youtube.com/watch?v=... or any video link", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/25 outline-none rounded-xl pl-4 pr-20 py-3.5 text-sm text-slate-100 placeholder-slate-600 transition-all" }),
+                el("button", { type: "button", id: "vd-paste", class: "absolute right-2 top-1/2 -translate-y-1/2 text-[11px] font-bold uppercase tracking-wide text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/25 rounded-lg px-2.5 py-1.5 transition-colors" }, "Paste")
+              ]),
+              el("button", { type: "submit", id: "vd-submit", class: "shrink-0 inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 disabled:opacity-60 text-slate-950 font-bold text-sm rounded-xl px-6 py-3.5 transition-all shadow-lg shadow-emerald-500/20" }, [
+                el("svg", { id: "vd-spinner", class: "hidden w-4 h-4 animate-spin", viewBox: "0 0 24 24", fill: "none" }, [
+                  el("circle", { cx: "12", cy: "12", r: "9", stroke: "currentColor", "stroke-width": "3", class: "opacity-25" }),
+                  el("path", { d: "M21 12a9 9 0 0 0-9-9", stroke: "currentColor", "stroke-width": "3", "stroke-linecap": "round" })
+                ]),
+                el("span", { id: "vd-submit-text" }, "Download")
+              ])
+            ])
+          ]),
+          el("div", { id: "vd-idle", class: "mt-5" }, [
+            el("div", { class: "flex items-start gap-2.5 text-xs text-slate-500 leading-relaxed" }, [
+              el("svg", { class: "w-4 h-4 mt-0.5 shrink-0 text-slate-600", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round" }, [
+                el("circle", { cx: "12", cy: "12", r: "10" }), el("path", { d: "M12 16v-4M12 8h.01" })
+              ]),
+              el("span", { html: "Works with public videos from <strong class='text-slate-400 font-semibold'>YouTube</strong>, <strong class='text-slate-400 font-semibold'>TikTok</strong>, <strong class='text-slate-400 font-semibold'>Instagram</strong>, <strong class='text-slate-400 font-semibold'>Facebook</strong>, <strong class='text-slate-400 font-semibold'>Twitter/X</strong>, <strong class='text-slate-400 font-semibold'>Reddit</strong>, and 1000+ more." })
+            ])
+          ]),
+          el("div", { id: "vd-loading", class: "hidden mt-5 animate-fade-up" }, [
+            el("div", { class: "flex items-center gap-3 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 shimmer" }, [
+              el("svg", { class: "w-5 h-5 animate-spin text-emerald-500 shrink-0", viewBox: "0 0 24 24", fill: "none" }, [
+                el("circle", { cx: "12", cy: "12", r: "9", stroke: "currentColor", "stroke-width": "3", class: "opacity-25" }),
+                el("path", { d: "M21 12a9 9 0 0 0-9-9", stroke: "currentColor", "stroke-width": "3", "stroke-linecap": "round" })
+              ]),
+              el("div", null, [
+                el("p", { class: "text-sm font-semibold text-slate-200", id: "vd-loading-title" }, "Detecting platform…"),
+                el("p", { class: "text-xs text-slate-500 mt-0.5", id: "vd-loading-sub" }, "Scanning the link and finding the best video source.")
+              ])
+            ])
+          ]),
+          el("div", { id: "vd-error", class: "hidden mt-5 animate-fade-up" }, [
+            el("div", { class: "flex items-start gap-3 bg-red-500/5 border border-red-500/30 rounded-xl px-4 py-3.5" }, [
+              el("svg", { class: "w-5 h-5 text-red-500 shrink-0 mt-0.5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round" }, [
+                el("circle", { cx: "12", cy: "12", r: "10" }), el("path", { d: "M12 8v4M12 16h.01" })
+              ]),
+              el("div", null, [
+                el("p", { class: "text-sm font-semibold text-red-400" }, "Couldn't get that video"),
+                el("p", { id: "vd-error-msg", class: "text-xs text-red-300/80 mt-1 leading-relaxed" }, "Something went wrong.")
+              ])
+            ])
+          ]),
+          el("div", { id: "vd-success", class: "hidden mt-5 animate-fade-up" }, [
+            el("div", { class: "bg-emerald-500/5 border border-emerald-500/30 rounded-xl p-4" }, [
+              el("div", { class: "flex items-center justify-between mb-4" }, [
+                el("div", { class: "flex items-center gap-2.5" }, [
+                  el("svg", { class: "w-5 h-5 text-emerald-500 shrink-0", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.4", "stroke-linecap": "round" }, [el("path", { d: "M20 6L9 17l-5-5" })]),
+                  el("p", { class: "text-sm font-semibold text-emerald-400" }, "Video ready to download")
+                ]),
+                el("span", { id: "vd-platform", class: "text-[11px] font-semibold text-slate-400 bg-slate-800 border border-slate-700 rounded-full px-2.5 py-1" })
+              ]),
+              el("video", { id: "vd-preview", class: "w-full max-h-72 rounded-lg bg-slate-950 border border-slate-800 mb-4 hidden", controls: "", playsinline: "", preload: "metadata" }),
+              el("div", { class: "flex flex-col sm:flex-row gap-3" }, [
+                el("a", { id: "vd-download", href: "#", target: "_blank", rel: "noopener noreferrer", download: "video.mp4", class: "flex-1 inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl px-5 py-3.5 transition-all shadow-lg shadow-emerald-500/20 text-center" }, [
+                  el("svg", { class: "w-4 h-4", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.5", "stroke-linecap": "round" }, [el("path", { d: "M12 3v12" }), el("path", { d: "M7 11l5 5 5-5" }), el("path", { d: "M5 20h14" })]),
+                  "Save Video (MP4)"
+                ]),
+                el("button", { type: "button", id: "vd-reset", class: "inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm rounded-xl px-5 py-3.5 transition-colors" }, "Download Another")
+              ])
+            ])
+          ])
+        ]),
+
+        // How-to
+        seoSection("How to Download Videos from Any Platform", [
+          el("ol", { class: "space-y-4 mb-8" }, [
+            stepItem("1", "Copy the video link", "Open the video on YouTube, TikTok, Instagram, Facebook, Twitter/X, Reddit, or any other platform. Tap Share → Copy link, or copy the URL from your browser's address bar."),
+            stepItem("2", "Paste it into the box above", "Scroll back to the top of this page and paste the copied URL into the input field. You can also tap the green Paste button."),
+            stepItem("3", "Hit the Download button", "Press Download. The tool automatically detects the platform and fetches the direct video source. A preview will appear once ready."),
+            stepItem("4", "Save the MP4 to your device", "Tap Save Video (MP4). On desktop the file goes to Downloads. On Android it goes to Downloads/Gallery. On iPhone, tap Share → Save to Photos.")
+          ]),
+          el("div", { class: "bg-slate-900 border border-slate-800 rounded-xl p-4 text-sm text-slate-400 leading-relaxed" }, [
+            el("strong", { class: "text-slate-200 font-semibold" }, "A quick note: "),
+            "only public videos can be downloaded. Private accounts and deleted posts cannot be accessed."
+          ])
+        ])
+      ]);
+
+      // Bind video downloader logic after render
+      setTimeout(function () { bindVideoDownloader(); }, 0);
+
+      return container;
+    }
+
+    function stepItem(num, title, desc) {
+      return el("li", { class: "flex gap-4" }, [
+        el("span", { class: "shrink-0 w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 font-bold text-sm flex items-center justify-center" }, num),
+        el("div", null, [
+          el("p", { class: "font-semibold text-slate-200 mb-1" }, title),
+          el("p", { class: "text-sm text-slate-400 leading-relaxed" }, desc)
+        ])
+      ]);
+    }
+
+    // ---------- IMAGE CONVERTER PAGE ----------
+    function renderImageConverter() {
+      var container = el("div", { class: "animate-fade-up" }, [
+        el("h1", { class: "text-3xl sm:text-4xl font-extrabold text-slate-50 tracking-tight mb-3" }, "Image Converter"),
+        el("p", { class: "text-slate-400 text-base mb-8 max-w-2xl leading-relaxed" },
+          "Convert images between PNG, JPEG, and WebP formats instantly in your browser. No upload, no waiting — your files never leave your device."),
+
+        el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-2xl shadow-black/40 mb-10" }, [
+          el("div", { id: "ic-dropzone", class: "border-2 border-dashed border-slate-700 hover:border-emerald-500/50 rounded-xl p-8 text-center cursor-pointer transition-colors mb-5" }, [
+            el("svg", { class: "w-12 h-12 mx-auto text-slate-600 mb-3", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" }, [
+              el("rect", { x: "3", y: "3", width: "18", height: "18", rx: "2" }),
+              el("circle", { cx: "8.5", cy: "8.5", r: "1.5" }),
+              el("path", { d: "M21 15l-5-5L5 21" })
+            ]),
+            el("p", { class: "text-sm text-slate-300 font-medium mb-1" }, "Drop an image here or click to browse"),
+            el("p", { class: "text-xs text-slate-500" }, "Supports PNG, JPEG, WebP, GIF, BMP — max 10 MB")
+          ]),
+          el("input", { id: "ic-input", type: "file", accept: "image/*", class: "hidden" }),
+
+          el("div", { id: "ic-controls", class: "hidden" }, [
+            el("div", { class: "grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5" }, [
+              el("div", null, [
+                el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Output Format"),
+                el("select", { id: "ic-format", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" }, [
+                  el("option", { value: "image/jpeg" }, "JPEG (.jpg)"),
+                  el("option", { value: "image/png" }, "PNG (.png)"),
+                  el("option", { value: "image/webp" }, "WebP (.webp)")
+                ])
+              ]),
+              el("div", null, [
+                el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Quality"),
+                el("div", { class: "flex items-center gap-3" }, [
+                  el("input", { id: "ic-quality", type: "range", min: "10", max: "100", value: "90", class: "flex-1" }),
+                  el("span", { id: "ic-quality-val", class: "text-sm text-emerald-400 font-bold w-10 text-right" }, "90%")
+                ])
+              ]),
+              el("div", null, [
+                el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Max Width (px)"),
+                el("input", { id: "ic-maxwidth", type: "number", value: "1920", min: "100", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+              ])
+            ]),
+            el("div", { id: "ic-preview-area", class: "mb-5" }, [
+              el("div", { class: "flex gap-4 items-start" }, [
+                el("div", { class: "flex-1" }, [
+                  el("p", { class: "text-xs font-semibold text-slate-400 mb-2" }, "Original"),
+                  el("img", { id: "ic-preview-original", class: "w-full max-h-48 object-contain rounded-lg bg-slate-950 border border-slate-800" })
+                ]),
+                el("div", { class: "flex-1" }, [
+                  el("p", { class: "text-xs font-semibold text-slate-400 mb-2" }, "Converted"),
+                  el("img", { id: "ic-preview-converted", class: "w-full max-h-48 object-contain rounded-lg bg-slate-950 border border-slate-800" })
+                ])
+              ]),
+              el("p", { id: "ic-file-info", class: "text-xs text-slate-500 mt-3" })
+            ]),
+            el("div", { class: "flex flex-col sm:flex-row gap-3" }, [
+              el("button", { id: "ic-convert", class: "flex-1 inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl px-5 py-3.5 transition-all shadow-lg shadow-emerald-500/20" }, "Convert Image"),
+              el("a", { id: "ic-download", href: "#", download: "converted-image.jpg", class: "flex-1 hidden inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm rounded-xl px-5 py-3.5 transition-colors text-center" }, "Download Converted Image"),
+              el("button", { id: "ic-reset", class: "inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm rounded-xl px-5 py-3.5 transition-colors" }, "Reset")
+            ])
+          ])
+        ]),
+
+        seoSection("How to Convert Images Online (Free & Private)", [
+          el("p", { class: "text-slate-400 leading-relaxed mb-4" },
+            "Our image converter runs entirely in your browser using the HTML5 Canvas API. That means your images are never uploaded to any server — they are processed locally on your device. This makes the tool faster than server-based converters and completely private."),
+          el("ol", { class: "space-y-3 mb-6" }, [
+            stepItem("1", "Upload your image", "Drag and drop a PNG, JPEG, WebP, GIF, or BMP file onto the drop zone, or click to browse your files."),
+            stepItem("2", "Choose the output format", "Select JPEG, PNG, or WebP from the dropdown. Adjust the quality slider and maximum width if needed."),
+            stepItem("3", "Click Convert", "The tool processes your image instantly and shows a side-by-side preview of the original and converted versions."),
+            stepItem("4", "Download the result", "Click Download Converted Image to save the new file to your device.")
+          ]),
+          el("p", { class: "text-slate-400 leading-relaxed" },
+            "This tool is perfect for reducing image file sizes, converting screenshots for the web, preparing photos for social media, or changing formats to meet a website's upload requirements.")
+        ])
+      ]);
+
+      setTimeout(function () { bindImageConverter(); }, 0);
+      return container;
+    }
+
+    // ---------- BIRTH CHART PAGE ----------
+    function renderBirthChart() {
+      var container = el("div", { class: "animate-fade-up" }, [
+        el("h1", { class: "text-3xl sm:text-4xl font-extrabold text-slate-50 tracking-tight mb-3" }, "Birth Chart Calculator"),
+        el("p", { class: "text-slate-400 text-base mb-8 max-w-2xl leading-relaxed" },
+          "Enter your birth date, time, and place to discover your Sun sign, Moon sign, and Rising sign. This is a simplified calculator for entertainment and educational purposes."),
+
+        el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-2xl shadow-black/40 mb-10" }, [
+          el("div", { class: "grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5" }, [
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Birth Date"),
+              el("input", { id: "bc-date", type: "date", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ]),
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Birth Time"),
+              el("input", { id: "bc-time", type: "time", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ]),
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Birth Place (optional)"),
+              el("input", { id: "bc-place", type: "text", placeholder: "City, Country", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600" })
+            ])
+          ]),
+          el("button", { id: "bc-calc", class: "w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl px-8 py-3.5 transition-all shadow-lg shadow-emerald-500/20" }, "Calculate My Chart"),
+          el("div", { id: "bc-result", class: "hidden mt-6 animate-fade-up" })
+        ]),
+
+        seoSection("What Is a Birth Chart?", [
+          el("p", { class: "text-slate-400 leading-relaxed mb-4" },
+            "A birth chart (also called a natal chart) is a snapshot of the sky at the exact moment and location you were born. In astrology, three placements are considered the most important: your Sun sign, your Moon sign, and your Rising sign (also called the Ascendant)."),
+          el("ul", { class: "space-y-3 mb-6" }, [
+            featureItem("Sun Sign", "Represents your core identity, ego, and life purpose. It is what most people mean when they ask \"what's your sign?\""),
+            featureItem("Moon Sign", "Represents your emotional world, instincts, and inner needs. It governs how you process feelings and what makes you feel safe."),
+            featureItem("Rising Sign", "Represents the mask you show the world and how others perceive you at first meeting. It is determined by your birth time and location.")
+          ]),
+          el("p", { class: "text-slate-400 leading-relaxed mb-4" },
+            "This calculator provides a simplified approximation of these three placements. For a full professional chart with all planets, houses, and aspects, consult a qualified astrologer. The results here are intended for entertainment and educational purposes only.")
+        ])
+      ]);
+
+      setTimeout(function () { bindBirthChart(); }, 0);
+      return container;
+    }
+
+    function featureItem(title, desc) {
+      return el("li", { class: "flex gap-3" }, [
+        el("svg", { class: "w-5 h-5 text-emerald-500 shrink-0 mt-0.5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.4", "stroke-linecap": "round" }, [el("path", { d: "M20 6L9 17l-5-5" })]),
+        el("p", { class: "text-slate-400 leading-relaxed text-sm" }, [el("strong", { class: "text-slate-200 font-semibold" }, title + ". "), desc])
+      ]);
+    }
+
+    // ---------- PAINT CALCULATOR PAGE ----------
+    function renderPaintCalculator() {
+      var container = el("div", { class: "animate-fade-up" }, [
+        el("h1", { class: "text-3xl sm:text-4xl font-extrabold text-slate-50 tracking-tight mb-3" }, "Paint Calculator"),
+        el("p", { class: "text-slate-400 text-base mb-8 max-w-2xl leading-relaxed" },
+          "Estimate how much paint you need for any room. Enter the room dimensions, number of coats, and door/window areas to get an instant litre estimate."),
+
+        el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-2xl shadow-black/40 mb-10" }, [
+          el("div", { class: "grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5" }, [
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Room Length (m)"),
+              el("input", { id: "pc-length", type: "number", value: "5", min: "0.1", step: "0.1", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ]),
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Room Width (m)"),
+              el("input", { id: "pc-width", type: "number", value: "4", min: "0.1", step: "0.1", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ]),
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Ceiling Height (m)"),
+              el("input", { id: "pc-height", type: "number", value: "2.7", min: "0.1", step: "0.1", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ]),
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Number of Coats"),
+              el("input", { id: "pc-coats", type: "number", value: "2", min: "1", max: "5", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ])
+          ]),
+          el("div", { class: "grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5" }, [
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Doors (count)"),
+              el("input", { id: "pc-doors", type: "number", value: "2", min: "0", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ]),
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Windows (count)"),
+              el("input", { id: "pc-windows", type: "number", value: "2", min: "0", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ]),
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Paint Coverage (m²/L)"),
+              el("input", { id: "pc-coverage", type: "number", value: "12", min: "1", step: "0.5", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ]),
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Paint Price per Litre ($)"),
+              el("input", { id: "pc-price", type: "number", value: "15", min: "0", step: "0.5", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" })
+            ])
+          ]),
+          el("button", { id: "pc-calc", class: "w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl px-8 py-3.5 transition-all shadow-lg shadow-emerald-500/20" }, "Calculate Paint Needed"),
+          el("div", { id: "pc-result", class: "hidden mt-6 animate-fade-up" })
+        ]),
+
+        seoSection("How to Estimate Paint for a Room", [
+          el("p", { class: "text-slate-400 leading-relaxed mb-4" },
+            "Estimating paint correctly saves you money and avoids mid-project trips to the hardware store. The basic formula is: wall area = 2 × (length + width) × height. Subtract the area of doors and windows, multiply by the number of coats, then divide by the paint's coverage rate."),
+          el("ol", { class: "space-y-3 mb-6" }, [
+            stepItem("1", "Measure the room", "Measure the length, width, and ceiling height of the room in metres."),
+            stepItem("2", "Enter the dimensions", "Fill in the fields above. The default coverage rate (12 m²/L) is typical for most interior emulsion paints."),
+            stepItem("3", "Add doors and windows", "Enter how many doors and windows the room has. The calculator subtracts an average of 1.8 m² per door and 1.5 m² per window."),
+            stepItem("4", "Choose coats and calculate", "Most rooms need two coats. The calculator gives you the total litres needed and an estimated cost.")
+          ]),
+          el("p", { class: "text-slate-400 leading-relaxed" },
+            "Always buy 10–15% more paint than the calculator suggests. This covers touch-ups, uneven surfaces, and colour matching on future batches.")
+        ])
+      ]);
+
+      setTimeout(function () { bindPaintCalculator(); }, 0);
+      return container;
+    }
+
+    // ---------- TITLE GENERATOR PAGE ----------
+    function renderTitleGenerator() {
+      var container = el("div", { class: "animate-fade-up" }, [
+        el("h1", { class: "text-3xl sm:text-4xl font-extrabold text-slate-50 tracking-tight mb-3" }, "Title Generator"),
+        el("p", { class: "text-slate-400 text-base mb-8 max-w-2xl leading-relaxed" },
+          "Generate catchy, click-worthy titles for blogs, YouTube videos, articles, and social media posts. Enter your topic, pick a style, and get instant suggestions."),
+
+        el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-2xl shadow-black/40 mb-10" }, [
+          el("div", { class: "grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5" }, [
+            el("div", { class: "sm:col-span-2" }, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Your Topic or Keyword"),
+              el("input", { id: "tg-topic", type: "text", placeholder: "e.g. healthy breakfast, travel to Japan, JavaScript tutorial", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600" })
+            ]),
+            el("div", null, [
+              el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2" }, "Style"),
+              el("select", { id: "tg-style", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 outline-none rounded-xl px-4 py-3 text-sm text-slate-100" }, [
+                el("option", { value: "blog" }, "Blog Post"),
+                el("option", { value: "youtube" }, "YouTube Video"),
+                el("option", { value: "listicle" }, "Listicle"),
+                el("option", { value: "howto" }, "How-To Guide"),
+                el("option", { value: "social" }, "Social Media")
+              ])
+            ])
+          ]),
+          el("button", { id: "tg-generate", class: "w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl px-8 py-3.5 transition-all shadow-lg shadow-emerald-500/20" }, "Generate Titles"),
+          el("div", { id: "tg-results", class: "hidden mt-6 animate-fade-up" })
+        ]),
+
+        seoSection("How to Write Titles That Get Clicks", [
+          el("p", { class: "text-slate-400 leading-relaxed mb-4" },
+            "A great title is the difference between a post that gets ignored and one that goes viral. Good titles are specific, promise a clear benefit, and create curiosity without being clickbait. They use numbers, power words, and emotional triggers to make readers want to learn more."),
+          el("ul", { class: "space-y-3 mb-6" }, [
+            featureItem("Be Specific", "Vague titles like \"Healthy Eating Tips\" get lost in the noise. Specific titles like \"7 High-Protein Breakfasts Under 300 Calories\" get clicks."),
+            featureItem("Use Numbers", "Lists and numbered titles perform consistently well across blogs, YouTube, and social media."),
+            featureItem("Promise a Benefit", "Tell the reader what they will gain: save time, make money, feel better, learn faster."),
+            featureItem("Create Curiosity", "Open a loop the reader needs to close. \"The One Ingredient Your Smoothie Is Missing\" beats \"Smoothie Recipe\" every time.")
+          ]),
+          el("p", { class: "text-slate-400 leading-relaxed" },
+            "Use this generator as a starting point, then refine the title to match your unique angle and voice. The best titles feel natural and honest, not forced or overly promotional.")
+        ])
+      ]);
+
+      setTimeout(function () { bindTitleGenerator(); }, 0);
+      return container;
+    }
+
+    // ---------- WECHAT DOWNLOADER PAGE ----------
+    function renderWeChatDownloader() {
+      var container = el("div", { class: "animate-fade-up" }, [
+        el("h1", { class: "text-3xl sm:text-4xl font-extrabold text-slate-50 tracking-tight mb-3" }, "WeChat Video Downloader"),
+        el("p", { class: "text-slate-400 text-base mb-8 max-w-2xl leading-relaxed" },
+          "Save videos from WeChat public articles and moments to your device as MP4 files. Paste a WeChat article link below to get started."),
+
+        el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-2xl shadow-black/40 mb-10" }, [
+          el("form", { id: "wc-form", autocomplete: "off" }, [
+            el("label", { class: "block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2.5" }, "WeChat Article or Video URL"),
+            el("div", { class: "flex flex-col sm:flex-row gap-3" }, [
+              el("div", { class: "relative flex-1" }, [
+                el("input", { id: "wc-input", type: "url", placeholder: "https://mp.weixin.qq.com/s/... or WeChat video link", class: "w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/25 outline-none rounded-xl pl-4 pr-20 py-3.5 text-sm text-slate-100 placeholder-slate-600 transition-all" }),
+                el("button", { type: "button", id: "wc-paste", class: "absolute right-2 top-1/2 -translate-y-1/2 text-[11px] font-bold uppercase tracking-wide text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/25 rounded-lg px-2.5 py-1.5 transition-colors" }, "Paste")
+              ]),
+              el("button", { type: "submit", id: "wc-submit", class: "shrink-0 inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 disabled:opacity-60 text-slate-950 font-bold text-sm rounded-xl px-6 py-3.5 transition-all shadow-lg shadow-emerald-500/20" }, [
+                el("svg", { id: "wc-spinner", class: "hidden w-4 h-4 animate-spin", viewBox: "0 0 24 24", fill: "none" }, [
+                  el("circle", { cx: "12", cy: "12", r: "9", stroke: "currentColor", "stroke-width": "3", class: "opacity-25" }),
+                  el("path", { d: "M21 12a9 9 0 0 0-9-9", stroke: "currentColor", "stroke-width": "3", "stroke-linecap": "round" })
+                ]),
+                el("span", { id: "wc-submit-text" }, "Download")
+              ])
+            ])
+          ]),
+          el("div", { id: "wc-idle", class: "mt-5" }, [
+            el("div", { class: "flex items-start gap-2.5 text-xs text-slate-500 leading-relaxed" }, [
+              el("svg", { class: "w-4 h-4 mt-0.5 shrink-0 text-slate-600", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round" }, [
+                el("circle", { cx: "12", cy: "12", r: "10" }), el("path", { d: "M12 16v-4M12 8h.01" })
+              ]),
+              el("span", { html: "Paste a public WeChat article link (<strong class='text-slate-400 font-semibold'>mp.weixin.qq.com</strong>). Videos embedded in the article will be extracted. Private moments and chats cannot be downloaded for privacy reasons." })
+            ])
+          ]),
+          el("div", { id: "wc-loading", class: "hidden mt-5 animate-fade-up" }, [
+            el("div", { class: "flex items-center gap-3 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 shimmer" }, [
+              el("svg", { class: "w-5 h-5 animate-spin text-emerald-500 shrink-0", viewBox: "0 0 24 24", fill: "none" }, [
+                el("circle", { cx: "12", cy: "12", r: "9", stroke: "currentColor", "stroke-width": "3", class: "opacity-25" }),
+                el("path", { d: "M21 12a9 9 0 0 0-9-9", stroke: "currentColor", "stroke-width": "3", "stroke-linecap": "round" })
+              ]),
+              el("div", null, [
+                el("p", { class: "text-sm font-semibold text-slate-200" }, "Extracting WeChat video…"),
+                el("p", { class: "text-xs text-slate-500 mt-0.5" }, "Fetching the article and scanning for embedded video sources.")
+              ])
+            ])
+          ]),
+          el("div", { id: "wc-error", class: "hidden mt-5 animate-fade-up" }, [
+            el("div", { class: "flex items-start gap-3 bg-red-500/5 border border-red-500/30 rounded-xl px-4 py-3.5" }, [
+              el("svg", { class: "w-5 h-5 text-red-500 shrink-0 mt-0.5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round" }, [
+                el("circle", { cx: "12", cy: "12", r: "10" }), el("path", { d: "M12 8v4M12 16h.01" })
+              ]),
+              el("div", null, [
+                el("p", { class: "text-sm font-semibold text-red-400" }, "Couldn't get that video"),
+                el("p", { id: "wc-error-msg", class: "text-xs text-red-300/80 mt-1 leading-relaxed" }, "Something went wrong.")
+              ])
+            ])
+          ]),
+          el("div", { id: "wc-success", class: "hidden mt-5 animate-fade-up" }, [
+            el("div", { class: "bg-emerald-500/5 border border-emerald-500/30 rounded-xl p-4" }, [
+              el("div", { class: "flex items-center gap-2.5 mb-4" }, [
+                el("svg", { class: "w-5 h-5 text-emerald-500 shrink-0", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.4", "stroke-linecap": "round" }, [el("path", { d: "M20 6L9 17l-5-5" })]),
+                el("p", { class: "text-sm font-semibold text-emerald-400" }, "Video ready to download")
+              ]),
+              el("video", { id: "wc-preview", class: "w-full max-h-72 rounded-lg bg-slate-950 border border-slate-800 mb-4 hidden", controls: "", playsinline: "", preload: "metadata" }),
+              el("div", { class: "flex flex-col sm:flex-row gap-3" }, [
+                el("a", { id: "wc-download", href: "#", target: "_blank", rel: "noopener noreferrer", download: "wechat-video.mp4", class: "flex-1 inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl px-5 py-3.5 transition-all shadow-lg shadow-emerald-500/20 text-center" }, [
+                  el("svg", { class: "w-4 h-4", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.5", "stroke-linecap": "round" }, [el("path", { d: "M12 3v12" }), el("path", { d: "M7 11l5 5 5-5" }), el("path", { d: "M5 20h14" })]),
+                  "Save Video (MP4)"
+                ]),
+                el("button", { type: "button", id: "wc-reset", class: "inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm rounded-xl px-5 py-3.5 transition-colors" }, "Download Another")
+              ])
+            ])
+          ])
+        ]),
+
+        seoSection("How to Download WeChat Videos", [
+          el("ol", { class: "space-y-4 mb-8" }, [
+            stepItem("1", "Open the WeChat article", "Find the public article (公众号文章) that contains the video you want to save."),
+            stepItem("2", "Copy the article link", "Tap the three-dot menu in the top-right corner and select Copy Link. On desktop, copy the URL from your browser's address bar."),
+            stepItem("3", "Paste it above", "Paste the link into the input box and tap Download."),
+            stepItem("4", "Save the MP4", "Once the video is extracted, tap Save Video (MP4) to download it to your device.")
+          ]),
+          el("div", { class: "bg-slate-900 border border-slate-800 rounded-xl p-4 text-sm text-slate-400 leading-relaxed" }, [
+            el("strong", { class: "text-slate-200 font-semibold" }, "Important: "),
+            "WeChat is a closed platform. This tool can only extract videos from public articles that are accessible without logging in. Private moments, chats, and status videos cannot be downloaded — that is a privacy feature of WeChat, not a limitation of this tool."
+          ])
+        ])
+      ]);
+
+      setTimeout(function () { bindWeChatDownloader(); }, 0);
+      return container;
+    }
+
+    // ---------- ABOUT PAGE ----------
+    function renderAbout() {
+      return el("div", { class: "animate-fade-up" }, [
+        el("h1", { class: "text-3xl sm:text-4xl font-extrabold text-slate-50 tracking-tight mb-3" }, "About AllToolsHub"),
+        el("p", { class: "text-slate-400 text-base mb-10 max-w-2xl leading-relaxed" },
+          "AllToolsHub is a free collection of online tools built for creators, students, homeowners, and anyone who needs a quick, reliable utility without signing up for anything."),
+
+        el("div", { class: "grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" }, [
+          el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-6" }, [
+            el("h2", { class: "text-lg font-bold text-slate-100 mb-3" }, "Our Mission"),
+            el("p", { class: "text-sm text-slate-400 leading-relaxed" },
+              "We believe everyday tools should be free, fast, and private. That is why every tool on AllToolsHub runs entirely in your browser. Your files, links, and personal data never leave your device. There is no account to create, no email to verify, and no premium tier to unlock.")
+          ]),
+          el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-6" }, [
+            el("h2", { class: "text-lg font-bold text-slate-100 mb-3" }, "How We Make Money"),
+            el("p", { class: "text-sm text-slate-400 leading-relaxed" },
+              "AllToolsHub is supported by display advertising. When you visit our pages, you may see ads from our advertising partner, Adsterra. These ads keep the tools free for everyone. We do not sell your data, and we do not use invasive tracking.")
+          ]),
+          el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-6" }, [
+            el("h2", { class: "text-lg font-bold text-slate-100 mb-3" }, "Privacy First"),
+            el("p", { class: "text-sm text-slate-400 leading-relaxed" },
+              "Because our tools run client-side, we do not store, transmit, or process your files on any server. Image conversions happen in your browser's canvas. Video extraction uses public APIs and proxies. Birth chart calculations use your date and time only to compute results locally — nothing is saved.")
+          ]),
+          el("div", { class: "bg-slate-900 border border-slate-800 rounded-2xl p-6" }, [
+            el("h2", { class: "text-lg font-bold text-slate-100 mb-3" }, "Contact Us"),
+            el("p", { class: "text-sm text-slate-400 leading-relaxed mb-3" },
+              "Have a question, found a bug, or want to suggest a new tool? We would love to hear from you."),
+            el("p", { class: "text-sm text-emerald-400 font-medium" }, "hello@alltoolshub.example.com")
+          ])
+        ]),
+
+        seoSection("Why Choose AllToolsHub?", [
+          el("ul", { class: "space-y-3 mb-6" }, [
+            featureItem("100% Free", "Every tool is free to use with no hidden charges, no premium tiers, and no download limits."),
+            featureItem("No Signup Required", "You never need to create an account, verify an email, or log in with a social profile."),
+            featureItem("Privacy Protected", "Your files and data stay on your device. Nothing is uploaded to our servers."),
+            featureItem("Works Everywhere", "Responsive design that works on iPhone, Android, Windows, Mac, and Linux."),
+            featureItem("No Watermarks", "Downloaded videos and converted images are clean — no added logos or branding."),
+            featureItem("Fast & Lightweight", "Built with plain HTML, Tailwind CSS, and vanilla JavaScript. No heavy frameworks, no slow load times.")
+          ])
+        ]),
+
+        seoSection("Frequently Asked Questions", [
+          faqItem("Is AllToolsHub really free?", "Yes. Every tool on AllToolsHub is 100% free and always will be. The site is supported by display advertising, which covers hosting costs. You never pay for anything."),
+          faqItem("Do I need to create an account?", "No. There is no signup, no login, and no account system. Just open a tool and use it."),
+          faqItem("Are my files uploaded to your server?", "No. All file processing (image conversion, video extraction, calculations) happens inside your browser. Your files never leave your device."),
+          faqItem("Which platforms do you support for video downloads?", "YouTube, TikTok, Instagram, Facebook, Twitter/X, Reddit, WeChat, Threads, Vimeo, Dailymotion, Twitch, and 1000+ other sites."),
+          faqItem("Can I use these tools on my phone?", "Yes. The entire site is mobile-responsive and works on iPhone, Android, tablets, and desktop computers.")
+        ])
+      ]);
+    }
+
+    function faqItem(q, a) {
+      return el("div", { class: "bg-slate-900 border border-slate-800 rounded-xl p-5 mb-4" }, [
+        el("h3", { class: "text-base sm:text-lg font-bold text-slate-100 mb-2.5" }, q),
+        el("p", { class: "text-sm text-slate-400 leading-relaxed" }, a)
+      ]);
+    }
+
+    // ---------- 404 PAGE ----------
+    function render404() {
+      return el("div", { class: "text-center py-20 animate-fade-up" }, [
+        el("p", { class: "text-6xl font-extrabold text-emerald-500 mb-4" }, "404"),
+        el("h1", { class: "text-2xl font-bold text-slate-100 mb-3" }, "Page Not Found"),
+        el("p", { class: "text-slate-400 mb-8" }, "The page you are looking for does not exist."),
+        el("a", { href: "#/", class: "inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl px-6 py-3.5 transition-all" }, "Go Home")
+      ]);
+    }
+
+    /* =========================================================
+       TOOL BINDING FUNCTIONS
+    ========================================================= */
+
+    // ---------- VIDEO DOWNLOADER BINDING ----------
+    function bindVideoDownloader() {
+      var form = $("#vd-form");
+      var input = $("#vd-input");
+      var pasteBtn = $("#vd-paste");
+      var submitBtn = $("#vd-submit");
+      var submitText = $("#vd-submit-text");
+      var spinner = $("#vd-spinner");
+      var idle = $("#vd-idle");
+      var loading = $("#vd-loading");
+      var error = $("#vd-error");
+      var success = $("#vd-success");
+      var errorMsg = $("#vd-error-msg");
+      var platformBadge = $("#vd-platform");
+      var downloadBtn = $("#vd-download");
+      var preview = $("#vd-preview");
+      var resetBtn = $("#vd-reset");
+      var loadingTitle = $("#vd-loading-title");
+      var loadingSub = $("#vd-loading-sub");
+
+      if (!form) return;
+
+      function setState(state, payload) {
+        [idle, loading, error, success].forEach(function (s) { s.classList.add("hidden"); });
+        if (state === "idle") {
+          idle.classList.remove("hidden");
+          submitBtn.disabled = false; submitText.textContent = "Download"; spinner.classList.add("hidden");
+        } else if (state === "loading") {
+          loading.classList.remove("hidden");
+          submitBtn.disabled = true; submitText.textContent = "Working…"; spinner.classList.remove("hidden");
+          if (payload) { loadingTitle.textContent = payload.title; loadingSub.textContent = payload.subtitle; }
+        } else if (state === "error") {
+          error.classList.remove("hidden");
+          errorMsg.textContent = payload || "Something went wrong.";
+          submitBtn.disabled = false; submitText.textContent = "Download"; spinner.classList.add("hidden");
+        } else if (state === "success") {
+          success.classList.remove("hidden");
+          submitBtn.disabled = false; submitText.textContent = "Download"; spinner.classList.add("hidden");
+          if (payload) platformBadge.textContent = payload.platform || "Video";
+        }
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var cleaned = normaliseInput(input.value);
+        if (!cleaned || cleaned === "https://") { setState("error", "Please paste a video link first."); return; }
+        var platform = detectPlatform(cleaned);
+        input.value = cleaned;
+        setState("loading", { title: "Detecting platform…", subtitle: "Scanning the link and finding the best video source." });
+        setTimeout(function () {
+          setState("loading", { title: "Extracting from " + platform.name + "…", subtitle: "Fetching the video source. This usually takes 2–5 seconds." });
+          resolveVideo(cleaned, platform)
+            .then(function (result) {
+              downloadBtn.setAttribute("href", result.url);
+              downloadBtn.setAttribute("download", "video-" + Date.now() + ".mp4");
+              preview.src = result.url; preview.classList.remove("hidden");
+              setState("success", { platform: result.platform || platform.name });
+            })
+            .catch(function (err) {
+              var msg = "A network error stopped the request. Please check your connection and try again.";
+              if (err && err.name === "AbortError") msg = "The request timed out. Please try again.";
+              else if (err && (err.message === "ALL_PROXIES_FAILED" || err.message === "COBALT_ERROR" || err.message === "COBALT_NO_URL"))
+                msg = "We couldn't extract this video right now. The link may be private, region-locked, or the public API may be busy. Please wait a few seconds and try again.";
+              else if (err && err.message === "NO_VIDEO_FOUND")
+                msg = "No video was found at that link. It may be a text-only or image-only post.";
+              setState("error", msg);
+            });
+        }, 400);
+      });
+
+      pasteBtn.addEventListener("click", function () {
+        if (navigator.clipboard && navigator.clipboard.readText) {
+          navigator.clipboard.readText().then(function (t) { if (t) { input.value = t.trim(); input.focus(); } }).catch(function () { input.focus(); });
+        } else input.focus();
+      });
+
+      resetBtn.addEventListener("click", function () {
+        input.value = "";
+        downloadBtn.setAttribute("href", "#");
+        preview.pause(); preview.removeAttribute("src"); preview.load(); preview.classList.add("hidden");
+        platformBadge.textContent = "";
+        setState("idle");
+        input.focus();
+      });
+
+      input.addEventListener("input", function () { if (!error.classList.contains("hidden")) setState("idle"); });
+      setState("idle");
+    }
+
+    // ---------- IMAGE CONVERTER BINDING ----------
+    function bindImageConverter() {
+      var dropzone = $("#ic-dropzone");
+      var input = $("#ic-input");
+      var controls = $("#ic-controls");
+      var format = $("#ic-format");
+      var quality = $("#ic-quality");
+      var qualityVal = $("#ic-quality-val");
+      var maxWidth = $("#ic-maxwidth");
+      var previewOrig = $("#ic-preview-original");
+      var previewConv = $("#ic-preview-converted");
+      var fileInfo = $("#ic-file-info");
+      var convertBtn = $("#ic-convert");
+      var downloadBtn = $("#ic-download");
+      var resetBtn = $("#ic-reset");
+
+      if (!dropzone) return;
+
+      var originalImage = null;
+      var originalFile = null;
+      var convertedBlob = null;
+
+      function handleFile(file) {
+        if (!file || !file.type.startsWith("image/")) { alert("Please select an image file."); return; }
+        if (file.size > 10 * 1024 * 1024) { alert("File is larger than 10 MB."); return; }
+        originalFile = file;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          originalImage = new Image();
+          originalImage.onload = function () {
+            previewOrig.src = e.target.result;
+            previewConv.src = e.target.result;
+            controls.classList.remove("hidden");
+            fileInfo.textContent = "Original: " + file.name + " (" + (file.size / 1024).toFixed(1) + " KB, " + originalImage.width + "×" + originalImage.height + " px)";
+            downloadBtn.classList.add("hidden");
+            convertedBlob = null;
+          };
+          originalImage.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      dropzone.addEventListener("click", function () { input.click(); });
+      dropzone.addEventListener("dragover", function (e) { e.preventDefault(); dropzone.classList.add("border-emerald-500/50"); });
+      dropzone.addEventListener("dragleave", function () { dropzone.classList.remove("border-emerald-500/50"); });
+      dropzone.addEventListener("drop", function (e) {
+        e.preventDefault();
+        dropzone.classList.remove("border-emerald-500/50");
+        if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+      });
+      input.addEventListener("change", function () { if (input.files.length) handleFile(input.files[0]); });
+
+      quality.addEventListener("input", function () { qualityVal.textContent = quality.value + "%"; });
+
+      convertBtn.addEventListener("click", function () {
+        if (!originalImage) return;
+        var canvas = document.createElement("canvas");
+        var targetWidth = Math.min(originalImage.width, parseInt(maxWidth.value) || originalImage.width);
+        var scale = targetWidth / originalImage.width;
+        canvas.width = targetWidth;
+        canvas.height = Math.round(originalImage.height * scale);
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
+        var mime = format.value;
+        var q = parseInt(quality.value) / 100;
+        canvas.toBlob(function (blob) {
+          convertedBlob = blob;
+          var url = URL.createObjectURL(blob);
+          previewConv.src = url;
+          var ext = mime === "image/png" ? "png" : mime === "image/webp" ? "webp" : "jpg";
+          downloadBtn.href = url;
+          downloadBtn.download = "converted-" + Date.now() + "." + ext;
+          downloadBtn.classList.remove("hidden");
+          fileInfo.textContent += " → Converted: " + (blob.size / 1024).toFixed(1) + " KB";
+        }, mime, q);
+      });
+
+      resetBtn.addEventListener("click", function () {
+        originalImage = null; originalFile = null; convertedBlob = null;
+        input.value = "";
+        controls.classList.add("hidden");
+        downloadBtn.classList.add("hidden");
+        previewOrig.src = ""; previewConv.src = "";
+        fileInfo.textContent = "";
+      });
+    }
+
+    // ---------- BIRTH CHART BINDING ----------
+    function bindBirthChart() {
+      var dateInput = $("#bc-date");
+      var timeInput = $("#bc-time");
+      var placeInput = $("#bc-place");
+      var calcBtn = $("#bc-calc");
+      var result = $("#bc-result");
+
+      if (!calcBtn) return;
+
+      var SIGNS = [
+        { name: "Aries", symbol: "♈", element: "Fire", dates: "Mar 21 – Apr 19" },
+        { name: "Taurus", symbol: "♉", element: "Earth", dates: "Apr 20 – May 20" },
+        { name: "Gemini", symbol: "♊", element: "Air", dates: "May 21 – Jun 20" },
+        { name: "Cancer", symbol: "♋", element: "Water", dates: "Jun 21 – Jul 22" },
+        { name: "Leo", symbol: "♌", element: "Fire", dates: "Jul 23 – Aug 22" },
+        { name: "Virgo", symbol: "♍", element: "Earth", dates: "Aug 23 – Sep 22" },
+        { name: "Libra", symbol: "♎", element: "Air", dates: "Sep 23 – Oct 22" },
+        { name: "Scorpio", symbol: "♏", element: "Water", dates: "Oct 23 – Nov 21" },
+        { name: "Sagittarius", symbol: "♐", element: "Fire", dates: "Nov 22 – Dec 21" },
+        { name: "Capricorn", symbol: "♑", element: "Earth", dates: "Dec 22 – Jan 19" },
+        { name: "Aquarius", symbol: "♒", element: "Air", dates: "Jan 20 – Feb 18" },
+        { name: "Pisces", symbol: "♓", element: "Water", dates: "Feb 19 – Mar 20" }
+      ];
+
+      function getSunSign(month, day) {
+        var cutoffs = [20, 19, 21, 20, 21, 21, 23, 23, 23, 23, 22, 22];
+        var idx = month - 1;
+        if (day < cutoffs[idx]) idx = (idx + 11) % 12;
+        return SIGNS[idx];
+      }
+
+      function getMoonSign(date, time) {
+        // Simplified approximation: moon moves ~13.2° per day.
+        // Using a reference new moon and a 29.53-day cycle.
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var hours = time ? parseInt(time.split(":")[0]) : 12;
+        var minutes = time ? parseInt(time.split(":")[1]) : 0;
+        var totalDays = (year - 2000) * 365.25 + (month + 1) * 30.44 + day + (hours * 60 + minutes) / 1440;
+        var lunarCycle = 29.530588853;
+        var moonAge = totalDays % lunarCycle;
+        var moonIndex = Math.floor((moonAge / lunarCycle) * 12) % 12;
+        return SIGNS[moonIndex];
+      }
+
+      function getRisingSign(date, time, place) {
+        // Simplified: uses hour of birth to approximate ascendant.
+        // Real rising sign requires exact latitude/longitude and sidereal time.
+        var hours = time ? parseInt(time.split(":")[0]) : 12;
+        var baseIdx = (hours + 6) % 24; // rough offset
+        var signIdx = Math.floor(baseIdx / 2) % 12;
+        return SIGNS[signIdx];
+      }
+
+      calcBtn.addEventListener("click", function () {
+        if (!dateInput.value || !timeInput.value) {
+          alert("Please enter your birth date and time.");
+          return;
+        }
+        var parts = dateInput.value.split("-");
+        var date = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+        var time = timeInput.value;
+        var place = placeInput.value || "Unknown";
+
+        var sun = getSunSign(date.getMonth() + 1, date.getDate());
+        var moon = getMoonSign(date, time);
+        var rising = getRisingSign(date, time, place);
+
+        result.classList.remove("hidden");
+        result.innerHTML = "";
+        result.appendChild(el("div", { class: "grid grid-cols-1 sm:grid-cols-3 gap-4" }, [
+          chartCard("Sun Sign", sun, "Your core identity and life purpose"),
+          chartCard("Moon Sign", moon, "Your emotional world and inner needs"),
+          chartCard("Rising Sign", rising, "How others perceive you at first meeting")
+        ]));
+        result.appendChild(el("p", { class: "text-xs text-slate-500 mt-5 leading-relaxed text-center" },
+          "This is a simplified approximation for entertainment and educational purposes. For a precise chart, consult a professional astrologer with your exact birth time and location."));
+      });
+
+      function chartCard(label, sign, desc) {
+        return el("div", { class: "bg-slate-950 border border-slate-800 rounded-xl p-5 text-center" }, [
+          el("p", { class: "text-[10px] font-bold uppercase tracking-wider text-emerald-400 mb-2" }, label),
+          el("p", { class: "text-4xl mb-2" }, sign.symbol),
+          el("p", { class: "text-lg font-bold text-slate-100 mb-1" }, sign.name),
+          el("p", { class: "text-xs text-slate-500 mb-2" }, sign.dates),
+          el("p", { class: "text-[11px] text-slate-500 leading-relaxed" }, desc)
+        ]);
+      }
+    }
+
+    // ---------- PAINT CALCULATOR BINDING ----------
+    function bindPaintCalculator() {
+      var calcBtn = $("#pc-calc");
+      var result = $("#pc-result");
+
+      if (!calcBtn) return;
+
+      calcBtn.addEventListener("click", function () {
+        var length = parseFloat($("#pc-length").value) || 0;
+        var width = parseFloat($("#pc-width").value) || 0;
+        var height = parseFloat($("#pc-height").value) || 0;
+        var coats = parseInt($("#pc-coats").value) || 1;
+        var doors = parseInt($("#pc-doors").value) || 0;
+        var windows = parseInt($("#pc-windows").value) || 0;
+        var coverage = parseFloat($("#pc-coverage").value) || 12;
+        var price = parseFloat($("#pc-price").value) || 0;
+
+        var wallArea = 2 * (length + width) * height;
+        var ceilingArea = length * width;
+        var totalArea = wallArea + ceilingArea;
+        var doorArea = doors * 1.8;
+        var windowArea = windows * 1.5;
+        var paintableArea = Math.max(0, totalArea - doorArea - windowArea);
+        var totalPaintArea = paintableArea * coats;
+        var litresNeeded = totalPaintArea / coverage;
+        var litresWithWaste = litresNeeded * 1.1;
+        var estimatedCost = litresWithWaste * price;
+
+        result.classList.remove("hidden");
+        result.innerHTML = "";
+        result.appendChild(el("div", { class: "bg-slate-950 border border-emerald-500/30 rounded-xl p-6" }, [
+          el("p", { class: "text-xs font-bold uppercase tracking-wider text-emerald-400 mb-4" }, "Paint Estimate"),
+          el("div", { class: "grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4" }, [
+            statBox("Wall Area", wallArea.toFixed(1) + " m²"),
+            statBox("Ceiling Area", ceilingArea.toFixed(1) + " m²"),
+            statBox("Paintable Area", paintableArea.toFixed(1) + " m²"),
+            statBox("Total Coats", coats + " coat" + (coats > 1 ? "s" : ""))
+          ]),
+          el("div", { class: "grid grid-cols-1 sm:grid-cols-3 gap-4" }, [
+            statBox("Paint Needed", litresNeeded.toFixed(2) + " L", true),
+            statBox("Buy This Much", litresWithWaste.toFixed(2) + " L", true),
+            statBox("Estimated Cost", "$" + estimatedCost.toFixed(2), true)
+          ]),
+          el("p", { class: "text-xs text-slate-500 mt-4 leading-relaxed" },
+            "We recommend buying 10% more paint than calculated to cover touch-ups and uneven surfaces.")
+        ]));
+      });
+
+      function statBox(label, value, highlight) {
+        return el("div", { class: "bg-slate-900 border border-slate-800 rounded-lg p-3" }, [
+          el("p", { class: "text-[10px] font-semibold uppercase tracking-wider text-slate-500 mb-1" }, label),
+          el("p", { class: "text-base font-bold " + (highlight ? "text-emerald-400" : "text-slate-200") }, value)
+        ]);
+      }
+    }
+
+    // ---------- TITLE GENERATOR BINDING ----------
+    function bindTitleGenerator() {
+      var topicInput = $("#tg-topic");
+      var styleSelect = $("#tg-style");
+      var generateBtn = $("#tg-generate");
+      var results = $("#tg-results");
+
+      if (!generateBtn) return;
+
+      var TEMPLATES = {
+        blog: [
+          "The Complete Guide to {topic} in {year}",
+          "{topic}: Everything You Need to Know",
+          "Why {topic} Matters More Than Ever in {year}",
+          "10 Things Nobody Tells You About {topic}",
+          "How {topic} Can Transform Your Life",
+          "The Ultimate {topic} Checklist for Beginners",
+          "{topic} Explained: A Beginner-Friendly Guide",
+          "5 Common {topic} Mistakes (And How to Avoid Them)"
+        ],
+        youtube: [
+          "{topic} — The Only Video You Need to Watch",
+          "I Tried {topic} for 30 Days. Here's What Happened",
+          "{topic} Tutorial: Step-by-Step for Beginners",
+          "The Truth About {topic} Nobody Talks About",
+          "How to Master {topic} in 10 Minutes",
+          "{topic} vs Everything Else: Which Is Best?",
+          "Stop Doing {topic} Wrong! Do This Instead",
+          "The {topic} Method That Changed Everything"
+        ],
+        listicle: [
+          "7 {topic} Tips That Actually Work",
+          "12 {topic} Ideas You Haven't Tried Yet",
+          "9 {topic} Hacks for Busy People",
+          "15 {topic} Mistakes to Avoid at All Costs",
+          "10 {topic} Tools You Need in {year}",
+          "6 {topic} Strategies That Double Your Results"
+        ],
+        howto: [
+          "How to {topic} in 5 Simple Steps",
+          "How to Master {topic} Without Wasting Time",
+          "How to Start {topic} Today (Beginner's Guide)",
+          "How to {topic} Like a Pro: Secrets Revealed",
+          "How to Fix {topic} Problems Fast",
+          "How to Choose the Right {topic} for You"
+        ],
+        social: [
+          "This {topic} Hack Changed My Life 🤯",
+          "Nobody Talks About This {topic} Secret",
+          "{topic} in 60 Seconds ⏱️",
+          "The {topic} Tip I Wish I Knew Sooner",
+          "POV: You Finally Understand {topic}",
+          "Save This {topic} Checklist Before It's Gone 📌"
+        ]
+      };
+
+      generateBtn.addEventListener("click", function () {
+        var topic = (topicInput.value || "").trim();
+        if (!topic) { alert("Please enter a topic or keyword."); return; }
+        var style = styleSelect.value;
+        var templates = TEMPLATES[style] || TEMPLATES.blog;
+        var year = new Date().getFullYear();
+        var picks = [];
+        var pool = templates.slice();
+        for (var i = 0; i < 6 && pool.length > 0; i++) {
+          var idx = Math.floor(Math.random() * pool.length);
+          var t = pool.splice(idx, 1)[0];
+          picks.push(t.replace(/{topic}/g, topic).replace(/{year}/g, year));
+        }
+
+        results.classList.remove("hidden");
+        results.innerHTML = "";
+        results.appendChild(el("p", { class: "text-xs font-bold uppercase tracking-wider text-slate-400 mb-3" }, "Suggested Titles"));
+        picks.forEach(function (title) {
+          var row = el("div", { class: "flex items-center gap-3 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 mb-2 group" }, [
+            el("p", { class: "flex-1 text-sm text-slate-200" }, title),
+            el("button", {
+              type: "button",
+              class: "shrink-0 text-[11px] font-bold uppercase tracking-wide text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/25 rounded-lg px-2.5 py-1.5 transition-colors",
+              onclick: function () {
+                if (navigator.clipboard) {
+                  navigator.clipboard.writeText(title).then(function () {
+                    this.textContent = "Copied!";
+                    var btn = this;
+                    setTimeout(function () { btn.textContent = "Copy"; }, 1500);
+                  }.bind(this));
+                }
+              }
+            }, "Copy")
+          ]);
+          results.appendChild(row);
+        });
+      });
+    }
+
+    // ---------- WECHAT DOWNLOADER BINDING ----------
+    function bindWeChatDownloader() {
+      var form = $("#wc-form");
+      var input = $("#wc-input");
+      var pasteBtn = $("#wc-paste");
+      var submitBtn = $("#wc-submit");
+      var submitText = $("#wc-submit-text");
+      var spinner = $("#wc-spinner");
+      var idle = $("#wc-idle");
+      var loading = $("#wc-loading");
+      var error = $("#wc-error");
+      var success = $("#wc-success");
+      var errorMsg = $("#wc-error-msg");
+      var downloadBtn = $("#wc-download");
+      var preview = $("#wc-preview");
+      var resetBtn = $("#wc-reset");
+
+      if (!form) return;
+
+      function setState(state, payload) {
+        [idle, loading, error, success].forEach(function (s) { s.classList.add("hidden"); });
+        if (state === "idle") { idle.classList.remove("hidden"); submitBtn.disabled = false; submitText.textContent = "Download"; spinner.classList.add("hidden"); }
+        else if (state === "loading") { loading.classList.remove("hidden"); submitBtn.disabled = true; submitText.textContent = "Working…"; spinner.classList.remove("hidden"); }
+        else if (state === "error") { error.classList.remove("hidden"); errorMsg.textContent = payload || "Something went wrong."; submitBtn.disabled = false; submitText.textContent = "Download"; spinner.classList.add("hidden"); }
+        else if (state === "success") { success.classList.remove("hidden"); submitBtn.disabled = false; submitText.textContent = "Download"; spinner.classList.add("hidden"); }
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var cleaned = normaliseInput(input.value);
+        if (!cleaned || cleaned === "https://") { setState("error", "Please paste a WeChat article link first."); return; }
+        input.value = cleaned;
+        setState("loading");
+
+        // Use Cobalt API for WeChat extraction
+        fetchViaCobalt(cleaned)
+          .then(function (result) {
+            downloadBtn.setAttribute("href", result.url);
+            downloadBtn.setAttribute("download", "wechat-video-" + Date.now() + ".mp4");
+            preview.src = result.url; preview.classList.remove("hidden");
+            setState("success");
+          })
+          .catch(function () {
+            // Fallback: try generic scraping
+            return fetchViaScraping(cleaned).then(function (result) {
+              downloadBtn.setAttribute("href", result.url);
+              downloadBtn.setAttribute("download", "wechat-video-" + Date.now() + ".mp4");
+              preview.src = result.url; preview.classList.remove("hidden");
+              setState("success");
+            });
+          })
+          .catch(function (err) {
+            var msg = "We couldn't extract a video from that WeChat link. The article may be private, require login, or contain no downloadable video.";
+            if (err && err.message === "ALL_PROXIES_FAILED") msg = "The extraction service is temporarily busy. Please wait a few seconds and try again.";
+            setState("error", msg);
+          });
+      });
+
+      pasteBtn.addEventListener("click", function () {
+        if (navigator.clipboard && navigator.clipboard.readText) {
+          navigator.clipboard.readText().then(function (t) { if (t) { input.value = t.trim(); input.focus(); } }).catch(function () { input.focus(); });
+        } else input.focus();
+      });
+
+      resetBtn.addEventListener("click", function () {
+        input.value = "";
+        downloadBtn.setAttribute("href", "#");
+        preview.pause(); preview.removeAttribute("src"); preview.load(); preview.classList.add("hidden");
+        setState("idle");
+        input.focus();
+      });
+
+      input.addEventListener("input", function () { if (!error.classList.contains("hidden")) setState("idle"); });
+      setState("idle");
+    }
+
+    /* =========================================================
+       ROUTER
+    ========================================================= */
+    var ROUTES = {
+      "": renderHome,
+      "/": renderHome,
+      "/tools/video-downloader": renderVideoDownloader,
+      "/tools/image-converter": renderImageConverter,
+      "/tools/birth-chart": renderBirthChart,
+      "/tools/paint-calculator": renderPaintCalculator,
+      "/tools/title-generator": renderTitleGenerator,
+      "/tools/wechat-downloader": renderWeChatDownloader,
+      "/about": renderAbout
+    };
+
+    var META = {
+      "": { title: "AllToolsHub – Free Online Tools: Video Downloader, Image Converter, Birth Chart & More", desc: "Free online tools for everyone. Download videos, convert images, calculate birth charts, estimate paint, generate titles & more." },
+      "/tools/video-downloader": { title: "Video Downloader – Download Videos from YouTube, TikTok, Instagram & 1000+ Sites | AllToolsHub", desc: "Free all-in-one video downloader. Paste any link and save MP4 videos from YouTube, TikTok, Instagram, Facebook, Twitter/X, Reddit and more. No login, no watermark." },
+      "/tools/image-converter": { title: "Image Converter – Convert PNG, JPEG, WebP Online Free | AllToolsHub", desc: "Convert images between PNG, JPEG, and WebP formats instantly in your browser. No upload, no signup, 100% private." },
+      "/tools/birth-chart": { title: "Birth Chart Calculator – Find Your Sun, Moon & Rising Sign Free | AllToolsHub", desc: "Enter your birth date, time, and place to discover your Sun sign, Moon sign, and Rising sign. Free online birth chart calculator." },
+      "/tools/paint-calculator": { title: "Paint Calculator – Estimate Paint Needed for Any Room | AllToolsHub", desc: "Calculate how much paint you need for walls and ceilings. Enter room dimensions, doors, windows, and coats for an instant estimate." },
+      "/tools/title-generator": { title: "Title Generator – Catchy Blog, YouTube & Article Titles | AllToolsHub", desc: "Generate click-worthy titles for blogs, YouTube videos, articles, and social media posts. Free title generator with multiple styles." },
+      "/tools/wechat-downloader": { title: "WeChat Video Downloader – Save WeChat Videos Free | AllToolsHub", desc: "Download videos from WeChat public articles and moments. Paste a WeChat link and save the video as MP4. Free, no login." },
+      "/about": { title: "About Us – AllToolsHub", desc: "Learn about AllToolsHub, our mission, how we make money, and our commitment to privacy. Free online tools for everyone." }
+    };
+
+    function updateMeta(path) {
+      var meta = META[path] || META[""];
+      document.title = meta.title;
+      var descTag = document.querySelector('meta[name="description"]');
+      if (descTag) descTag.setAttribute("content", meta.desc);
+      var canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute("href", CONFIG.siteUrl + (path === "/" ? "/" : path));
+    }
+
+    function router() {
+      var hash = window.location.hash.replace(/^#/, "") || "/";
+      if (hash === "") hash = "/";
+      var renderFn = ROUTES[hash];
+      var app = $("#app");
+
+      if (!renderFn) {
+        app.innerHTML = "";
+        app.appendChild(render404());
+        updateMeta("");
+        return;
+      }
+
+      app.innerHTML = "";
+      app.appendChild(renderFn());
+      updateMeta(hash);
+
+      // Update active nav
+      $$("[data-nav]").forEach(function (a) { a.classList.remove("text-emerald-400", "bg-slate-900"); });
+      if (hash === "/") { var h = $('[data-nav="home"]'); if (h) h.classList.add("text-emerald-400", "bg-slate-900"); }
+      if (hash === "/about") { var a = $('[data-nav="about"]'); if (a) a.classList.add("text-emerald-400", "bg-slate-900"); }
+
+      // Close mobile menu
+      var mm = $("#mobile-menu");
+      if (mm) mm.classList.add("hidden");
+
+      window.scrollTo(0, 0);
+    }
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+    var mobileBtn = $("#mobile-menu-btn");
+    var mobileMenu = $("#mobile-menu");
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+
+    /* =========================================================
+       INIT
+    ========================================================= */
+    window.addEventListener("hashchange", router);
+    document.getElementById("year").textContent = new Date().getFullYear();
+    router();
+
+  })();
+  </script>
+</body>
+</html>
